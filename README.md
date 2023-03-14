@@ -1,8 +1,8 @@
-# arcaflow-image-builder-action
+# arcaflow-container-tookit-action
 Github action to use the [arcaflow-image-builder](https://github.com/arcalot/arcaflow-plugin-image-builder)
 
 ## Configuration
-Configuring arcaflow-iamge-builder can be done utilzing inputs.
+Configuring arcaflow-container-tookit(Carpenter) can be done utilzing inputs.
 
 ### Configurable Inputs
 
