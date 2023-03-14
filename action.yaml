@@ -1,6 +1,11 @@
 # action.yml
 name: 'arcaflow-container-toolkit-action'
 description: 'Docker container runtime to use the official arcaflow-container-tookit'
+author: Arcalot
+branding:
+  icon: 'box'
+  color: 'white'
+  
 inputs:
   image_name:  
     description: 'Name of plugin image to be built'
