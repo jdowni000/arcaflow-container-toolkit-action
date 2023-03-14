@@ -5,7 +5,8 @@ Github action to use the [arcaflow-image-builder](https://github.com/arcalot/arc
 Configuring arcaflow-iamge-builder can be done utilzing inputs.
 
 ### Configurable Inputs
-####Required:
+
+#### Required:
 IMAGE_NAME Name of the image that carpenter will build - string
 IMAGE_TAG Tag of the image that carpenter will build - string
 
