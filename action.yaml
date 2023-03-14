@@ -1,6 +1,6 @@
 # action.yml
-name: 'arcaflow-image-builder-action'
-description: 'Docker container runtime to use the official arcaflow-image-builder'
+name: 'arcaflow-container-toolkit-action'
+description: 'Docker container runtime to use the official arcaflow-container-tookit'
 inputs:
   image_name:  
     description: 'Name of plugin image to be built'
