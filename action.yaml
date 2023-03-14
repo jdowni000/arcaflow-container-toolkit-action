@@ -46,10 +46,6 @@ inputs:
     description: 'Lenth of time before build failure'
     required: false
     default: 600
-  github_workspace:  
-    description: 'Plugin project'
-    required: true
-    default: ''
   
 runs:
   using: 'docker'
@@ -71,4 +67,3 @@ runs:
     - QUAY_CUSTOM_NAMESPACE: ${{ inputs.quay_custom_namespace }}
     - QUAY_IMG_EXP: ${{ inputs.quay_img_exp }}
     - BUILD_TIMEOUT: ${{ inputs.build_timeout }}
-    - GITHUB_WORKSPACE: ${{ inputs.github_workspace }}
