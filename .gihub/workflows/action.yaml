@@ -1,0 +1,74 @@
+# action.yml
+name: 'arcaflow-image-builder-action'
+description: 'Docker container runtime to use the official arcaflow-image-builder'
+inputs:
+  image_name:  
+    description: 'Name of plugin image to be built'
+    required: true
+    default: 'all'
+  image_tag:  
+    description: 'Tag of plugin image to be built'
+    required: true
+    default: 'latest'
+  github_username:  
+    description: 'Github username used to push image'
+    required: false
+    default: ''
+  github_password:  
+    description: 'Github password used to push image'
+    required: false
+    default: ''
+  github_namespace:  
+    description: 'Github namespaced used to push image'
+    required: false
+    default: ''
+  quay_username:  
+    description: 'Quay username used to push image'
+    required: false
+    default: ''
+  quay_password:  
+    description: 'Quay password used to push image'
+    required: false
+    default: ''
+  quay_namespace:  
+    description: 'Quay namespace used to push image'
+    required: false
+    default: ''
+  quay_custom_namespace:  
+    description: 'Quay custom namespace used to push image that is not QUAY_NAMESPACE'
+    required: false
+    default: ''
+  quay_img_exp:  
+    description: 'Image label to automatically delete image in quay'
+    required: false
+    default: 'never'
+  build_timeout:  
+    description: 'Lenth of time before build failure'
+    required: false
+    default: 600
+  github_workspace:  
+    description: 'Plugin project'
+    required: true
+    default: ''
+  
+runs:
+  using: 'docker'
+  image: 'ghcr.io/arcalot/arcaflow-plugin-image-builder:v0.3.0'
+  args:
+    - '--rm' 
+    - '--volume /var/run/docker.sock:/var/run/docker.sock:z'
+    - '--volume $PWD:/github/workspace'
+    - 'ghcr.io/arcalot/arcaflow-plugin-image-builder:v0.3.0 build --build --push'
+  env:
+    - IMAGE_NAME: ${{ inputs.image_name }}
+    - IMAGE_TAG: ${{ inputs.image_tag }}
+    - GITHUB_USERNAME: ${{ inputs.github_username }}
+    - GITHUB_PASSWORD: ${{ inputs.github_password }}
+    - GITHUB_NAMESPACE: ${{ inputs.github_namespace }}
+    - QUAY_USERNAME: ${{ inputs.quay_username }}
+    - QUAY_PASSWORD: ${{ inputs.quay_password }}
+    - QUAY_NAMESPACE: ${{ inputs.quay_namespace }}
+    - QUAY_CUSTOM_NAMESPACE: ${{ inputs.quay_custom_namespace }}
+    - QUAY_IMG_EXP: ${{ inputs.quay_img_exp }}
+    - BUILD_TIMEOUT: ${{ inputs.build_timeout }}
+    - GITHUB_WORKSPACE: ${{ inputs.github_workspace }}
