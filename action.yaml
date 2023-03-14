@@ -61,14 +61,14 @@ runs:
     - '--volume $PWD:/github/workspace'
     - 'ghcr.io/arcalot/arcaflow-plugin-image-builder:v0.3.0 build --build --push'
   env:
-    - IMAGE_NAME: ${{ inputs.image_name }}
-    - IMAGE_TAG: ${{ inputs.image_tag }}
-    - GITHUB_USERNAME: ${{ inputs.github_username }}
-    - GITHUB_PASSWORD: ${{ inputs.github_password }}
-    - GITHUB_NAMESPACE: ${{ inputs.github_namespace }}
-    - QUAY_USERNAME: ${{ inputs.quay_username }}
-    - QUAY_PASSWORD: ${{ inputs.quay_password }}
-    - QUAY_NAMESPACE: ${{ inputs.quay_namespace }}
-    - QUAY_CUSTOM_NAMESPACE: ${{ inputs.quay_custom_namespace }}
-    - QUAY_IMG_EXP: ${{ inputs.quay_img_exp }}
-    - BUILD_TIMEOUT: ${{ inputs.build_timeout }}
+    IMAGE_NAME: ${{ inputs.image_name }}
+    IMAGE_TAG: ${{ inputs.image_tag }}
+    GITHUB_USERNAME: ${{ inputs.github_username }}
+    GITHUB_PASSWORD: ${{ inputs.github_password }}
+    GITHUB_NAMESPACE: ${{ inputs.github_namespace }}
+    QUAY_USERNAME: ${{ inputs.quay_username }}
+    QUAY_PASSWORD: ${{ inputs.quay_password }}
+    QUAY_NAMESPACE: ${{ inputs.quay_namespace }}
+    QUAY_CUSTOM_NAMESPACE: ${{ inputs.quay_custom_namespace }}
+    QUAY_IMG_EXP: ${{ inputs.quay_img_exp }}
+    BUILD_TIMEOUT: ${{ inputs.build_timeout }}
