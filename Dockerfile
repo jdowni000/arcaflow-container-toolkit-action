@@ -1,4 +1,4 @@
-FROM ubuntu:latest
+FROM alpinelinux/docker-cli
 
 COPY parameter_run.sh /parameter_run.sh
 
