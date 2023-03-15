@@ -54,7 +54,9 @@ inputs:
   
 runs:
   using: 'docker'
-  image: 'Dockerfile'
+  image: 'docker://ghcr.io/arcalot/arcaflow-plugin-image-builder:v0.3.0'
+  args:
+    - build: 'build --build --push'
   env:
     IMAGE_NAME: ${{ inputs.image_name }}
     IMAGE_TAG: ${{ inputs.image_tag }}
