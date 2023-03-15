@@ -1,5 +1,5 @@
 FROM ubuntu:latest
 
-COPY paramter_run.sh /paramter_run.sh
+COPY parameter_run.sh /parameter_run.sh
 
-ENTRYPOINT ["/paramter_run.sh"]
+ENTRYPOINT ["/parameter_run.sh"]
