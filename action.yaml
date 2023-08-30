@@ -56,9 +56,10 @@ runs:
   using: 'docker'
   image: 'docker://ghcr.io/arcalot/arcaflow-container-toolkit:v1.2.1'
   args:
-    - 'build' 
+    - 'buildx' 
     - '--build'
     - '--push'
+    - '--platform linux/amd64,linux/arm64,linux/arm/v7'
   env:
     IMAGE_NAME: ${{ inputs.image_name }}
     IMAGE_TAG: ${{ inputs.image_tag }}
