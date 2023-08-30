@@ -1,5 +1,5 @@
 # action.yml
-name: 'arcaflow-container-toolkit-action'
+name: 'arcaflow-container-toolkit-action-jdowni000'
 description: 'Docker container runtime to use the official arcaflow-container-tookit'
 author: Arcalot
 branding:
