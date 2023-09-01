@@ -75,4 +75,4 @@ runs:
     QUAY_CUSTOM_NAMESPACE: ${{ inputs.quay_custom_namespace }}
     QUAY_IMG_EXP: ${{ inputs.quay_img_exp }}
     BUILD_TIMEOUT: ${{ inputs.build_timeout }}
-    ARCHITYPES: ${{ inputs.build_timeout }}
+    ARCHITYPES: ${{ inputs.architypes }}
