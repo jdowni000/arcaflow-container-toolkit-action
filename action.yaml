@@ -1,5 +1,5 @@
 # action.yml
-name: 'arcaflow-container-toolkit-action-test'
+name: 'arcaflow-container-toolkit-action'
 description: 'Docker container runtime to use the official arcaflow-container-tookit'
 author: Arcalot
 branding:
@@ -51,15 +51,18 @@ inputs:
     description: 'Lenth of time before build failure'
     required: false
     default: 600
+  architypes:
+    description: 'Architecture types requested for multi-arch builds'
+    required: false
+    default: ''
   
 runs:
   using: 'docker'
   image: 'docker://ghcr.io/arcalot/arcaflow-container-toolkit:v1.2.1'
   args:
-    - 'buildx' 
+    - 'build' 
     - '--build'
     - '--push'
-    - '--platform linux/amd64,linux/arm64,linux/arm/v7'
   env:
     IMAGE_NAME: ${{ inputs.image_name }}
     IMAGE_TAG: ${{ inputs.image_tag }}
@@ -72,3 +75,4 @@ runs:
     QUAY_CUSTOM_NAMESPACE: ${{ inputs.quay_custom_namespace }}
     QUAY_IMG_EXP: ${{ inputs.quay_img_exp }}
     BUILD_TIMEOUT: ${{ inputs.build_timeout }}
+    ARCHITYPES: ${{ inputs.build_timeout }}
