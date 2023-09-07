@@ -51,10 +51,14 @@ inputs:
     description: 'Lenth of time before build failure'
     required: false
     default: 600
-  architypes:
-    description: 'Architecture types requested for multi-arch builds'
+  archetype:
+    description: 'Architecture requested'
     required: false
     default: ''
+  req_check_only:
+    description: 'Utilize ACT only for requirements check'
+    required: false
+    default: false
   
 runs:
   using: 'docker'
@@ -75,4 +79,5 @@ runs:
     QUAY_CUSTOM_NAMESPACE: ${{ inputs.quay_custom_namespace }}
     QUAY_IMG_EXP: ${{ inputs.quay_img_exp }}
     BUILD_TIMEOUT: ${{ inputs.build_timeout }}
-    ARCHITYPES: ${{ inputs.architypes }}
+    ARCHETYPE: ${{ inputs.archetype }}
+    REQ_CHECK_ONLY: ${{ inputs.req_check_only }}
