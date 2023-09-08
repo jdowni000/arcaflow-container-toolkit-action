@@ -62,7 +62,7 @@ inputs:
   
 runs:
   using: 'docker'
-  image: 'docker://ghcr.io/arcalot/arcaflow-container-toolkit:v2.0.0'
+  image: 'docker://ghcr.io/jdowni000/arcaflow-container-toolkit:v0.0.1'
   args:
     - 'build' 
     - '--build'
